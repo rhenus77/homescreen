@@ -1,14 +1,16 @@
 import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import data from './data';
-import { useEffect,  useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { ArrowBackIos, ArrowForwardIos,} from '@material-ui/icons';
-
+import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
 
 // carosel start
 let slidesToShow = 4;
@@ -38,9 +40,6 @@ const NextBtn = (props) => {
     </>
   );
 };
-
-
-
 
 const carouselProperties = {
   prevArrow: <PreviousBtn />,
@@ -77,7 +76,6 @@ const carouselProperties = {
 };
 
 function App() {
-
   // carousel start
   const [width, setWidth] = useState(window.innerWidth);
   const updateWidth = () => {
@@ -100,100 +98,120 @@ function App() {
   }
   // carousel end
 
-
-
-
-
-
   return (
     <div className="App">
       <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
-          </Navbar>
-        </header>
-      {/* recent start */}
+        <Navbar expand="lg" variant="dark" bg="dark">
+          <Container>
+            {/* recent start */}
+            <Navbar.Brand href="/">HomeScreen</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+            >
+              <Nav className="me-auto w-100 justify-content-end">
+                <Nav.Link href="#">Cart</Nav.Link>
+                <Nav.Link href="#">Sign in</Nav.Link>
+                <NavDropdown title="User" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#">
+                    Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">
+                    Order History
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">
+                    Settings
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#">
+                    Sign out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
+            {/* recent end */}
+          </Container>
+        </Navbar>
+      </header>
 
       {/* Featured Products start */}
-      <div className='mt-5'>
+      <div className="mt-5">
         <h1>Featured Products</h1>
-      <div className="carousel">
-        <Slider {...carouselProperties}>
-        {data.products.map((product) => (
-            <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
-              <a href={`/product/${product.slug}`}>
-                <img src={product.image} alt={product.name} />
-              </a>
-              <div className="product-info">
+        <div className="carousel">
+          <Slider {...carouselProperties}>
+            {data.products.map((product) => (
+              <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
                 <a href={`/product/${product.slug}`}>
-                  <Card.Title>{product.name}</Card.Title>
+                  <img src={product.image} alt={product.name} />
                 </a>
-                <p>
-                  <strong>${product.price}</strong>
-                </p>
-                <Button>Add to cart</Button>
-              </div>
-            </Card>
-          ))}
-        </Slider>
-          
+                <div className="product-info">
+                  <a href={`/product/${product.slug}`}>
+                    <Card.Title>{product.name}</Card.Title>
+                  </a>
+                  <p>
+                    <strong>${product.price}</strong>
+                  </p>
+                  <Button>Add to cart</Button>
+                </div>
+              </Card>
+            ))}
+          </Slider>
         </div>
       </div>
       {/* Featured Products end */}
 
       {/* Latest Products start */}
-      <div className='mt-5'>
+      <div className="mt-5">
         <h1>Latest Products</h1>
         <div className="carousel">
-        <Slider {...carouselProperties}>
-        {data.products.map((product) => (
-            <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
-              <a href={`/product/${product.slug}`}>
-                <img src={product.image} alt={product.name} />
-              </a>
-              <div className="product-info">
+          <Slider {...carouselProperties}>
+            {data.products.map((product) => (
+              <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
                 <a href={`/product/${product.slug}`}>
-                  <Card.Title>{product.name}</Card.Title>
+                  <img src={product.image} alt={product.name} />
                 </a>
-                <p>
-                  <strong>${product.price}</strong>
-                </p>
-                <Button>Add to cart</Button>
-              </div>
-            </Card>
-          ))}
-        </Slider>
-          
+                <div className="product-info">
+                  <a href={`/product/${product.slug}`}>
+                    <Card.Title>{product.name}</Card.Title>
+                  </a>
+                  <p>
+                    <strong>${product.price}</strong>
+                  </p>
+                  <Button>Add to cart</Button>
+                </div>
+              </Card>
+            ))}
+          </Slider>
         </div>
       </div>
       {/* Latest Products end */}
 
       {/* Trending Products start */}
-      <div className='mt-5'>
+      <div className="mt-5">
         <h1>Trending Products</h1>
         <div className="carousel">
-        <Slider {...carouselProperties}>
-        {data.products.map((product) => (
-            <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
-              <a href={`/product/${product.slug}`}>
-                <img src={product.image} alt={product.name} />
-              </a>
-              <div className="product-info">
+          <Slider {...carouselProperties}>
+            {data.products.map((product) => (
+              <Card className="product" key={product.slug} sm={6} md={4} lg={3}>
                 <a href={`/product/${product.slug}`}>
-                  <Card.Title>{product.name}</Card.Title>
+                  <img src={product.image} alt={product.name} />
                 </a>
-                <p>
-                  <strong>${product.price}</strong>
-                </p>
-                <Button>Add to cart</Button>
-              </div>
-            </Card>
-          ))}
-        </Slider>
-          
+                <div className="product-info">
+                  <a href={`/product/${product.slug}`}>
+                    <Card.Title>{product.name}</Card.Title>
+                  </a>
+                  <p>
+                    <strong>${product.price}</strong>
+                  </p>
+                  <Button>Add to cart</Button>
+                </div>
+              </Card>
+            ))}
+          </Slider>
         </div>
       </div>
       {/* Trending Products end */}
-     
+
       {/* recent end */}
     </div>
   );
