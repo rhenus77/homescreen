@@ -4,49 +4,49 @@ const data = {
         name: 'Mercedes S class',
         slug: 'Mercedes',
         image: '/images/img1.jpg', // 679px × 829px
-        price: 120, 
+        price: 120000, 
       },
       {
         name: 'Mercedes Benze',
         slug: 'Benze',
         image: '/images/img2.jpg',
-        price: 250,
+        price: 250000,
       },
       {
         name: 'Mercedes S class',
         slug: 'Mercedes',
         image: '/images/img1.jpg', // 679px × 829px
-        price: 120,
+        price: 120000,
       },
       {
         name: 'Mercedes Benze',
         slug: 'Benze',
         image: '/images/img2.jpg',
-        price: 250,
+        price: 250000,
       },
       {
         name: 'Mercedes S class',
         slug: 'Mercedes',
         image: '/images/img1.jpg', // 679px × 829px
-        price: 120,
+        price: 120000,
       },
       {
         name: 'Mercedes Benze',
         slug: 'Benze',
         image: '/images/img2.jpg',
-        price: 250,
+        price: 250000,
       },
       {
         name: 'Mercedes S class',
         slug: 'Mercedes',
         image: '/images/img1.jpg', // 679px × 829px
-        price: 120,
+        price: 120000,
       },
       {
         name: 'Mercedes Benze',
         slug: 'Benze',
         image: '/images/img2.jpg',
-        price: 250,
+        price: 250000,
       },
     ],
   };

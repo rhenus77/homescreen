@@ -11,6 +11,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
+import SearchBox from './components/SearchBox';
 
 // carosel start
 let slidesToShow = 4;
@@ -107,26 +108,17 @@ function App() {
             {/* recent start */}
             <Navbar.Brand href="/">HomeScreen</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse
-              id="basic-navbar-nav"
-            > 
+            <Navbar.Collapse id="basic-navbar-nav">
+              <SearchBox />
               <Nav className="me-auto w-100 justify-content-end">
                 <Nav.Link href="#">Cart</Nav.Link>
                 <Nav.Link href="#">Sign in</Nav.Link>
                 <NavDropdown title="User" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#">
-                    Profile
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Order History
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Settings
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Order History</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Settings</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#">
-                    Sign out
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">Sign out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -215,11 +207,10 @@ function App() {
       {/* Trending Products end */}
 
       {/* footer start */}
-      <footer >
-          <div className="text-center">All rights reserved</div>
-        </footer>
+      <footer>
+        <div className="text-center">All rights reserved</div>
+      </footer>
       {/* footer stop */}
-
     </div>
   );
 }
