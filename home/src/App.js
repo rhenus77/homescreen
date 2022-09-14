@@ -100,6 +100,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* header start */}
       <header>
         <Navbar expand="lg" variant="dark" bg="dark">
           <Container>
@@ -108,7 +109,7 @@ function App() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse
               id="basic-navbar-nav"
-            >
+            > 
               <Nav className="me-auto w-100 justify-content-end">
                 <Nav.Link href="#">Cart</Nav.Link>
                 <Nav.Link href="#">Sign in</Nav.Link>
@@ -133,6 +134,7 @@ function App() {
           </Container>
         </Navbar>
       </header>
+      {/* header stop */}
 
       {/* Featured Products start */}
       <div className="mt-5">
@@ -212,7 +214,12 @@ function App() {
       </div>
       {/* Trending Products end */}
 
-      {/* recent end */}
+      {/* footer start */}
+      <footer >
+          <div className="text-center">All rights reserved</div>
+        </footer>
+      {/* footer stop */}
+
     </div>
   );
 }
